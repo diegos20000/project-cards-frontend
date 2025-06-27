@@ -1,0 +1,12 @@
+.footer {
+    background-color: gray;
+    font-size: 18px;
+    margin: 10% auto;
+    width: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 90%;
+  }
+}

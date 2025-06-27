@@ -1,0 +1,31 @@
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 18px;
+    margin: 0px auto;
+
+
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+
+.cards_button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.cards_button:hover {
+    background-color: #218838
+}
