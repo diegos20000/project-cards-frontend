@@ -1,8 +1,8 @@
 .footer {
-    background-color: gray;
+    background-color: rgb(59, 130, 163);
     font-size: 18px;
-    margin: 10% auto;
     width: 100%;
+    padding: 50px;
 }
 
 @media screen and (max-width: 320px) {

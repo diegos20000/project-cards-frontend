@@ -1,22 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { getGeolocation } from "../../utils/ThirdPartyApi";
 
 const Cards = () => {
-    const items = [
-        { id: 1, name: 'Item 1', description: 'Descripción 1' },        
-        { id: 2, name: 'Item 2', description: 'Descripción 2' },        
-        { id: 3, name: 'Item 3', description: 'Descripción 3' },
-    ];
+    const [ipAddress, setIpAddress] = useState("");
+    const [location, setLocation] = useState(null);
+    const [error, setError] = useState(null)
+
+    const handleInputChange = (event) => {
+        setIpAddress(event.target.value);
+    };
+
+    const handleSearch = () => {
+        if (!ipAddress) {
+            setError("Por favor ingrese una dirección IP");
+            setLocation(null);
+            return;
+        }
+
+        getGeolocation(ipAddress, (err, data) => {
+            if (err) {
+                setError("No se pudo obtener la geolocalización. Verifique la dirección IP");
+                setLocation(null);
+            } else {
+                setLocation(data);
+                setError(null);
+            }
+        });
+    };
+
 
     return (
         <div className="cards">
-            
-            {items.map(item => (
-                <div key={item.id} className="card">
-                    <h2>{item.name}</h2>
-                    <p>{item.description}</p>
-                    <button type="button" className="cards_button">Agregar al Carrito</button>
-                </div>
-            ))}
+            <div className="ip-search">
+                <h2>Buscar Ubicación por IP</h2>
+                <input 
+                    className="input"
+                    type="text"
+                    placeholder="Ingresar la dirección IP"
+                    onChange={handleInputChange}
+                 />
+                 <button className="cards_button"  onClick={handleSearch}>Buscar</button>
+                 {error && <p style={{ color: 'red' }}>{error}</p>}
+                 {location && (
+                    <div className="location-info">
+                        <h3>Información de Ubicación:</h3>
+                        <p><strong>País:</strong> {location.country}</p>
+                        <p><strong>Ciudad:</strong> {location.city}</p>
+                    </div>
+                 )}
+            </div>
         </div>
     );
 };

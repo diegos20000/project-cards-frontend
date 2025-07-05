@@ -1,12 +1,21 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import React from "react";
 
-const Header = () => {
+
+const Header = ({ onRegisterClick}) => {
+    const navigate = useNavigate();
+
+    
+
+
     return (
         <div className="header">
-            <div className="header_image"></div>
-            <h1 className="header_title">Alpaca Luxury</h1>
-            <button className="header_button">Inscribirse</button>
-            
+            <div className="header_logo"></div>
+            <div className="header_buttons">
+                <button className="header_button">Contactar</button>
+                <button className="header_button">Sobre Nosotros</button>
+                <button className="header_button" onClick={onRegisterClick}>Registrarse</button>
+        </div>
         </div>
     );
 };

@@ -2,3 +2,5 @@
 @import url(../src/components/Header/Header.css);
 @import url(../src/components/Footer/Footer.css);
 @import url(../src//components/Cards/Cards.css);
+@import url(../src/components/Main/Main.css);
+@import url(../src/components/RegisterModal.jsx/RegisterModal.css);
