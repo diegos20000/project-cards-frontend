@@ -1,9 +1,14 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 
 const Header = ({ onRegisterClick}) => {
-    const navigate = useNavigate();
+    const scrollTo = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     
 
@@ -12,8 +17,10 @@ const Header = ({ onRegisterClick}) => {
         <div className="header">
             <div className="header_logo"></div>
             <div className="header_buttons">
-                <button className="header_button">Contactar</button>
-                <button className="header_button">Sobre Nosotros</button>
+                <button className="header_button" 
+                onClick={() => scrollTo("ip-section")}>IP Address</button>
+                <button className="header_button" 
+                onClick={() => scrollTo("footer")}>Contactar</button>
                 <button className="header_button" onClick={onRegisterClick}>Registrarse</button>
         </div>
         </div>

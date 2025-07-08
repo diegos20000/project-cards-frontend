@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "../Cards/Cards";
-import "./Main.css";
+
 
 const Main = ({ location, onRegisterClick}) => {
     const [data, setData] = useState([]);
@@ -18,13 +18,29 @@ const Main = ({ location, onRegisterClick}) => {
     return (
         <main className="main-container">
             <Cards data={data} location={location} />
+            
             <section className="ip-info" >
-            <h2 className="main-title">¿Qué es una dirección IP?</h2>
-            <p className="ip-description">Una dirección IP (Internet Protocol) es un identificador único para un dispositivo en una red. Puede ser:</p>
-            <ul className="ip-types">
-                <li><strong>IP Pública:</strong> Es visible en internet y permite que los dispositivos se comuniquen a través de redes.</li>
-                    <li><strong>IP Privada:</strong> Se usa dentro de redes locales (como la de tu hogar u oficina) y no es accesible desde internet directamente.</li>
-            </ul>
+                <h2 className="main-title">¿Qué es una dirección IP?</h2>
+                <p className="ip-description">Una dirección IP (Internet Protocol) es un identificador único para un dispositivo en una red. Puede ser:
+
+                </p>
+                <div className="ip-columns">
+                    <div className="ip-column">
+                        <h3>IP Pública</h3>
+                        <p>
+                        Es la dirección visible en internet. Permite que los dispositivos se comuniquen entre sí a través de redes globales.
+                        Cada vez que te conectas a una página web, esta ve tu IP pública.
+                        </p>
+                    </div>
+                    <div className="ip-column">
+                        <h3>IP Privada</h3>
+                        <p>
+                        Se usa dentro de redes locales, como en hogares u oficinas. No es accesible directamente desde internet.
+                        Sirve para que los dispositivos se comuniquen dentro de esa red interna.
+                        </p>
+                    </div>
+                </div>
+            
             </section>
 
             <section className="register-box">

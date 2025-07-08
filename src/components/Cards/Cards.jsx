@@ -30,7 +30,7 @@ const Cards = () => {
 
 
     return (
-        <div className="cards">
+        <div className="cards" id="ip-section">
             <div className="ip-search">
                 <h2>Buscar Ubicación por IP</h2>
                 <input 
