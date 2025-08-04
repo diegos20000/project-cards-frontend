@@ -1,12 +1,15 @@
-# React + Vite
+# project-cards-frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project allows users to determine their location based on their IP address. It displays the city and country using a third-party API. The application is built with Vite and React, utilizing JavaScript for functionality.Features
 
-Currently, two official plugins are available:
+Displays the user's city and country based on their IP address.
+Utilizes a third-party API for accurate location data.
+Built with Vite for fast development and optimal performance.
+React for a dynamic user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies Used
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Vite
+React
+JavaScript
+Third-party API for location services
